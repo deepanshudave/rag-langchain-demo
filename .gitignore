@@ -1,0 +1,17 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Chroma DB
+chroma_db/
+
+# Virtual environment
+rag-env/
+
+# Document files
+documents/DocTest1.pdf
+documents/DocTest2.pdf
+
+# OS
+.DS_Store
