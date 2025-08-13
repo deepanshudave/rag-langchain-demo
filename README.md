@@ -105,6 +105,19 @@ python -m search.main ask "What is price of CHLORINATOR"
 
 
 
+#########################
+# E.g. SQLite Commands  #
+#########################
+
+sqlite3 chroma_db/chroma.sqlite3
+Inside SQLite:
+  .tables              -- Show all tables
+  .schema              -- Show table schemas
+  SELECT name FROM sqlite_master WHERE type='table' order by name;  -- List tables
+  .quit                -- Exit
+
+
+
 ## 🐛 Troubleshooting
 
 ### Common Issues
