@@ -111,7 +111,7 @@ python -m search.main ask "What is price of CHLORINATOR"
 # E.g. SQLite Commands  #
 #########################
    ```bash
-sqlite3 chroma_db/chroma.sqlite3\
+sqlite3 chroma_db/chroma.sqlite3
 Inside SQLite:
   .tables              -- Show all tables
   .schema              -- Show table schemas
