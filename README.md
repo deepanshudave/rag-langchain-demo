@@ -76,6 +76,7 @@ rag-demo/
    python -m indexer.main directory source_documents/
    ```
 
+   ```bash
 #########################
 # E.g. Indexer Commands #
 #########################
@@ -89,7 +90,7 @@ python -m indexer.main status
 python -m indexer.main clear
 **Force re-index all documents:**
 python -m indexer.main force source_documents/
-
+   ```
 
 
 5. **Start querying:**
@@ -100,22 +101,23 @@ python -m indexer.main force source_documents/
 #########################
 # E.g. Search Commands  #
 #########################
+   ```bash
 python -m search.main ask "What is machine learning?"
 python -m search.main ask "What is price of CHLORINATOR"
-
+   ```
 
 
 #########################
 # E.g. SQLite Commands  #
 #########################
-
-sqlite3 chroma_db/chroma.sqlite3
+   ```bash
+sqlite3 chroma_db/chroma.sqlite3\
 Inside SQLite:
   .tables              -- Show all tables
   .schema              -- Show table schemas
   SELECT name FROM sqlite_master WHERE type='table' order by name;  -- List tables
   .quit                -- Exit
-
+   ```
 
 
 ## 🐛 Troubleshooting
