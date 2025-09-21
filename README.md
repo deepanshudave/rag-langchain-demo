@@ -21,36 +21,34 @@ A Retrieval-Augmented Generation (RAG) system built with LangChain, ChromaDB, an
 ### Ingestion Workflow
 
 ```mermaid
-graph TD
-    A[📁 Source Documents] --> B{📄 File Type Check}
-    B -->|PDF| C[📄 PDF Loader]
-    B -->|TXT| D[📝 Text Loader]
-    B -->|MD| E[📓 Markdown Loader]
+graph LR
+    A[📁 Source Documents] --> B[📊 File Tracker]
+    B --> C{🔄 File Changed?}
+    C -->|No| D[✅ Skip Processing]
+    C -->|Yes| E{📄 File Type Check}
     
-    C --> F[🔍 Text Extraction]
-    D --> F
-    E --> F
+    E -->|PDF| F[📄 PDF Loader]
+    E -->|TXT| G[📝 Text Loader]
+    E -->|MD| H[📓 Markdown Loader]
     
-    F --> G[📏 Text Chunking]
-    G --> H[🧠 Embedding Generation]
-    H --> I[💾 ChromaDB Storage]
+    F --> I[🔍 Text Extraction]
+    G --> I
+    H --> I
     
-    J[📊 File Tracker] --> K{🔄 File Changed?}
-    K -->|Yes| L[🔄 Update Index]
-    K -->|No| M[✅ Skip Processing]
-    
-    L --> G
+    I --> J[📏 Text Chunking]
+    J --> K[🧠 Embedding Generation]
+    K --> L[💾 ChromaDB Storage]
     
     style A fill:#e1f5fe
-    style I fill:#c8e6c9
-    style J fill:#fff3e0
-    style M fill:#f3e5f5
+    style L fill:#c8e6c9
+    style B fill:#fff3e0
+    style D fill:#f3e5f5
 ```
 
 ### RAG Query Workflow
 
 ```mermaid
-graph TD
+graph LR
     A[❓ User Query] --> B[🧠 Query Embedding]
     B --> C[🔍 Vector Search]
     C --> D[💾 ChromaDB Retrieval]
