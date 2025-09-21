@@ -125,7 +125,9 @@ rag-demo/
 
 2. **Activate environment:**
    ```bash
+   python3 -m venv rag-env
    source rag-env/bin/activate
+   pip install -r requirements.txt
    ```
 
 3. **Configure API key:**
