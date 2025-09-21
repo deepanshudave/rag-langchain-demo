@@ -10,8 +10,8 @@ chroma_db/
 rag-env/
 
 # Document files
-documents/DocTest1.pdf
-documents/DocTest2.pdf
+source_documents/DocTest1.pdf
+source_documents/DocTest2.pdf
 
 # OS
 .DS_Store

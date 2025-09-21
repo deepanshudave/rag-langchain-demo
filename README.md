@@ -1,4 +1,4 @@
-# RAG Demo - Advanced Document Q&A System
+# RAG Demo - Document Q&A System
 
 A Retrieval-Augmented Generation (RAG) system built with LangChain, ChromaDB, and Anthropic Claude LLM API. Features intelligent document indexing, incremental updates, and conversational AI.
 
@@ -14,36 +14,99 @@ A Retrieval-Augmented Generation (RAG) system built with LangChain, ChromaDB, an
 ### Advanced Features
 - **🎛️ Centralized Configuration** - Easy customization via config files
 - **🛡️ Error Handling** - Error handling and logging
-- **🏗️ Modular Architecture** - Clean separation of concerns for maintainability
+- **🏗️ Modular Architecture** - Clean separation for maintainability
+
+## 📊 Workflow Diagrams
+
+### Ingestion Workflow
+
+```mermaid
+graph TD
+    A[📁 Source Documents] --> B{📄 File Type Check}
+    B -->|PDF| C[📄 PDF Loader]
+    B -->|TXT| D[📝 Text Loader]
+    B -->|MD| E[📓 Markdown Loader]
+    
+    C --> F[🔍 Text Extraction]
+    D --> F
+    E --> F
+    
+    F --> G[📏 Text Chunking]
+    G --> H[🧠 Embedding Generation]
+    H --> I[💾 ChromaDB Storage]
+    
+    J[📊 File Tracker] --> K{🔄 File Changed?}
+    K -->|Yes| L[🔄 Update Index]
+    K -->|No| M[✅ Skip Processing]
+    
+    L --> G
+    
+    style A fill:#e1f5fe
+    style I fill:#c8e6c9
+    style J fill:#fff3e0
+    style M fill:#f3e5f5
+```
+
+### RAG Query Workflow
+
+```mermaid
+graph TD
+    A[❓ User Query] --> B[🧠 Query Embedding]
+    B --> C[🔍 Vector Search]
+    C --> D[💾 ChromaDB Retrieval]
+    
+    D --> E[📚 Relevant Documents]
+    E --> F[🔄 Context Assembly]
+    
+    F --> G[📝 Prompt Construction]
+    
+    G --> H[🤖 Anthropic Claude API]
+    H --> I[💬 AI Response]
+    I --> J[✨ Final Answer]
+    
+    style A fill:#e3f2fd
+    style E fill:#f1f8e9
+    style H fill:#fce4ec
+    style J fill:#e8f5e8
+```
+
+## 🛠️ Tech Stack
+
+- **Python** - Core programming language for the entire application
+- **LangChain** - Framework for building LLM-powered applications and RAG pipelines
+- **ChromaDB** - Vector database for storing and retrieving document embeddings *(other options include Elasticsearch, MongoDB, Pinecone)*
+- **Anthropic Claude API** - Large language model for generating contextual responses
+- **PyPDF2** - PDF document processing and text extraction
+- **Sentence Transformers** - Text embedding generation for semantic search
 
 ## 🏗️ Project Structure
 
 ```
 rag-demo/
-├── README.md                 # This file
-├── requirements.txt          # Python dependencies
+├── README.md                # This file
+├── requirements.txt         # Python dependencies
 ├── .env                     # Environment variables (API keys)
 ├── setup.sh                 # Virtual environment setup script
 ├── common/                  # Shared utilities and configuration
 │   ├── __init__.py
-│   ├── config.py           # Centralized configuration
-│   ├── utils.py            # Utility functions
-│   └── vector_store.py     # ChromaDB wrapper
+│   ├── config.py            # Centralized configuration
+│   ├── utils.py             # Utility functions
+│   └── vector_store.py      # ChromaDB wrapper
 ├── indexer/                 # Document indexing module
 │   ├── __init__.py
-│   ├── main.py             # Indexing CLI and logic
-│   ├── document_loader.py  # PDF/text document loaders
-│   ├── text_processor.py   # Text chunking and processing
-│   └── file_tracker.py     # File change tracking
+│   ├── main.py              # Indexing CLI and logic
+│   ├── document_loader.py   # PDF/text document loaders
+│   ├── text_processor.py    # Text chunking and processing
+│   └── file_tracker.py      # File change tracking
 ├── search/                  # Search and query module
 │   ├── __init__.py
-│   ├── main.py             # Search CLI and interface
-│   └── rag_chain.py        # Claude AI integration
-├── source_documents/       # Source documents directory
-│   ├── *.pdf               # PDF documents
-│   └── *.txt               # Text files
-└── chroma_db/              # Vector database (auto-created)
-    └── ...                 # ChromaDB persistence files
+│   ├── main.py              # Search CLI and interface
+│   └── rag_chain.py         # Claude AI integration
+├── source_documents/        # Source documents directory
+│   ├── *.pdf                # PDF documents
+│   └── *.txt                # Text files
+└── chroma_db/               # Vector database (auto-created)
+    └── ...                  # ChromaDB persistence files
 ```
 
 ## 🚀 Quick Start
@@ -57,7 +120,7 @@ rag-demo/
 1. **Clone and setup:**
    ```bash
    git clone <repository-url>
-   cd rag-langchain-chroma-claude-demo
+   cd rag-langchain-demo
    chmod +x setup.sh && ./setup.sh
    ```
 
