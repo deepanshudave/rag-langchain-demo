@@ -138,20 +138,22 @@ rag-demo/
    python -m indexer.main directory source_documents/
    ```
 
+   **Example Indexer Commands:**
    ```bash
-#########################
-# E.g. Indexer Commands #
-#########################
-**Index all your documents:**
-python -m indexer.main directory source_documents/
-**Index a single file:**
-python -m indexer.main file source_documents/sample_document.txt
-**Check index status:**
-python -m indexer.main status
-**Clear the index:**
-python -m indexer.main clear
-**Force re-index all documents:**
-python -m indexer.main force source_documents/
+   # Index all your documents
+   python -m indexer.main directory source_documents/
+   
+   # Index a single file
+   python -m indexer.main file source_documents/sample_document.txt
+   
+   # Check index status
+   python -m indexer.main status
+   
+   # Clear the index
+   python -m indexer.main clear
+   
+   # Force re-index all documents
+   python -m indexer.main force source_documents/
    ```
 
 
@@ -160,25 +162,22 @@ python -m indexer.main force source_documents/
    python -m search.main ask "What is machine learning?"
    ```
 
-#########################
-# E.g. Search Commands  #
-#########################
+   **Example Search Commands:**
    ```bash
-python -m search.main ask "What is machine learning?"
-python -m search.main ask "What is price of CHLORINATOR"
+   python -m search.main ask "What is machine learning?"
+   python -m search.main ask "What is price of CHLORINATOR"
    ```
 
 
-#########################
-# E.g. SQLite Commands  #
-#########################
+**Example SQLite Commands:**
    ```bash
-sqlite3 chroma_db/chroma.sqlite3
-Inside SQLite:
-  .tables              -- Show all tables
-  .schema              -- Show table schemas
-  SELECT name FROM sqlite_master WHERE type='table' order by name;  -- List tables
-  .quit                -- Exit
+   sqlite3 chroma_db/chroma.sqlite3
+   
+   # Inside SQLite:
+   .tables              # Show all tables
+   .schema              # Show table schemas
+   SELECT name FROM sqlite_master WHERE type='table' order by name;  # List tables
+   .quit                # Exit
    ```
 
 
