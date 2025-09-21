@@ -21,7 +21,7 @@ A Retrieval-Augmented Generation (RAG) system built with LangChain, ChromaDB, an
 ### Ingestion Workflow
 
 ```mermaid
-graph TD
+graph LR
     A[📁 Source Documents] --> B[📊 File Tracker]
     B --> C{🔄 File Changed?}
     C -->|No| D[✅ Skip Processing]
