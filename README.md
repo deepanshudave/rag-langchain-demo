@@ -11,7 +11,7 @@ A Retrieval-Augmented Generation (RAG) system built with LangChain, ChromaDB, an
 - **⚡ Incremental Updates** - Only re-index modified documents for efficiency
 - **🗃️ File Tracking** - Built-in metadata tracking and change detection
 
-### Advanced Features
+### Other Features
 - **🎛️ Centralized Configuration** - Easy customization via config files
 - **🛡️ Error Handling** - Error handling and logging
 - **🏗️ Modular Architecture** - Clean separation for maintainability
@@ -21,7 +21,7 @@ A Retrieval-Augmented Generation (RAG) system built with LangChain, ChromaDB, an
 ### Ingestion Workflow
 
 ```mermaid
-graph LR
+graph TD
     A[📁 Source Documents] --> B[📊 File Tracker]
     B --> C{🔄 File Changed?}
     C -->|No| D[✅ Skip Processing]
@@ -72,7 +72,7 @@ graph LR
 
 - **Python** - Core programming language for the entire application
 - **LangChain** - Framework for building LLM-powered applications and RAG pipelines
-- **ChromaDB** - Vector database for storing and retrieving document embeddings *(other options include Elasticsearch, MongoDB, Pinecone)*
+- **ChromaDB** - Vector database for storing and retrieving document embeddings. ChromaDB for its simplicity and ease of use in local deployments *(Other alternatives you could consider include Elasticsearch, MongoDB, Pinecone)*
 - **Anthropic Claude API** - Large language model for generating contextual responses
 - **PyPDF2** - PDF document processing and text extraction
 - **Sentence Transformers** - Text embedding generation for semantic search
@@ -111,7 +111,8 @@ rag-demo/
 
 ### Prerequisites
 - Python 3.9+
-- Anthropic API key ([Get one here](https://console.anthropic.com/))
+- Anthropic API key (<a href="https://console.anthropic.com/" target="_blank">Get one here</a>)
+
 
 ### Installation
 
