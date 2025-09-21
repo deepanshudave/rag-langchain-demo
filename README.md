@@ -70,14 +70,12 @@ graph LR
 
 ## 🛠️ Tech Stack
 
-```
 - **Python** - Core programming language for the entire application
 - **LangChain** - Framework for building LLM-powered applications and RAG pipelines
 - **ChromaDB** - Vector database for storing and retrieving document embeddings. ChromaDB for its simplicity and ease of use in local deployments *(Other alternatives you could consider include Elasticsearch, MongoDB, Pinecone)*
 - **Anthropic Claude API** - Large language model for generating contextual responses
 - **PyPDF2** - PDF document processing and text extraction
 - **Sentence Transformers** - Text embedding generation for semantic search
-```
 
 ## 🏗️ Project Structure
 
