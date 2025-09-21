@@ -72,8 +72,8 @@ graph LR
 
 - **Python** - Core programming language for the entire application
 - **LangChain** - Framework for building LLM-powered applications and RAG pipelines
-- **ChromaDB** - Vector database for storing and retrieving document embeddings. ChromaDB for its simplicity and ease of use in local deployments *(Other alternatives you could consider include Elasticsearch, MongoDB, Pinecone)*
-- **Anthropic Claude API** - Large language model for generating contextual responses
+- **ChromaDB** - Vector database for storing and retrieving document embeddings. ChromaDB for its simplicity and ease of use in local deployments *(Other alternatives you could consider - Elasticsearch, MongoDB, Pinecone)*
+- **Anthropic Claude API** - Large language model for generating contextual responses *(Other alternatives you could consider - Ollama (for running locally), OpenAI etc.)*
 - **PyPDF2** - PDF document processing and text extraction
 - **Sentence Transformers** - Text embedding generation for semantic search
 
@@ -111,7 +111,7 @@ rag-demo/
 
 ### Prerequisites
 - Python 3.9+
-- Anthropic API key (<a href="https://console.anthropic.com/" target="_blank">Get one here</a>)
+- Anthropic API key (<a href="https://console.anthropic.com/" target="_blank">Get one here</a>) - *Note: This is a paid API, monitor your usage*
 
 
 ### Installation
@@ -125,9 +125,7 @@ rag-demo/
 
 2. **Activate environment:**
    ```bash
-   python3 -m venv rag-env
    source rag-env/bin/activate
-   pip install -r requirements.txt
    ```
 
 3. **Configure API key:**
@@ -171,7 +169,9 @@ rag-demo/
    ```
 
 
-**Example SQLite Commands:**
+### Database Inspection
+
+   **SQLite Commands:**
    ```bash
    sqlite3 chroma_db/chroma.sqlite3
    
