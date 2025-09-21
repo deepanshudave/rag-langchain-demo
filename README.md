@@ -120,12 +120,11 @@ rag-demo/
    ```bash
    git clone <repository-url>
    cd rag-langchain-demo
-   chmod +x setup.sh && ./setup.sh
    ```
 
-2. **Activate environment:**
+2. **Start up script:**
    ```bash
-   source rag-env/bin/activate
+   chmod +x setup.sh && ./setup.sh
    ```
 
 3. **Configure API key:**
