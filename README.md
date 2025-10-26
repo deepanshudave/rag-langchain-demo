@@ -2,6 +2,10 @@
 
 A Retrieval-Augmented Generation (RAG) system built with LangChain, ChromaDB, and Anthropic Claude LLM API. Features intelligent document indexing, incremental updates, and conversational AI.
 
+## Architecture Overview
+
+![RAG Architecture Workflow](workflow.png)
+
 ## 🎯 Features
 
 ### Core Capabilities
